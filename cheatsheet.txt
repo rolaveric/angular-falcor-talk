@@ -1,0 +1,5 @@
+## Stage 2 - Insert Angular
+
+## Stage 3 - Request from view
+
+## Stage 4 - Getter/Setter

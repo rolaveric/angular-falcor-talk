@@ -16,12 +16,14 @@
     "url": "https://github.com/rolaveric/angular-falcor-talk/issues"
   },
   "homepage": "https://github.com/rolaveric/angular-falcor-talk#readme",
-  "devDependencies": {
-    "jspm": "^0.16.11",
-    "express": "~4.11.1",
-    "body-parser": "^1.12.4",
-    "falcor-router-demo": "1.0.4",
-    "falcor-express": "0.1.1"
+  "dependencies": {
+    "babel": "^5.8.23",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "falcor-express": "^0.1.2",
+    "falcor-json-graph": "^1.1.5",
+    "falcor-router": "^0.2.9",
+    "jspm": "^0.16.11"
   },
   "jspm": {
     "directories": {
@@ -31,7 +33,6 @@
       "angular": "github:angular/bower-angular@^1.4.7",
       "falcor": "npm:falcor@^0.1.13",
       "falcor-http-datasource": "npm:falcor-http-datasource@^0.1.2",
-      "lodash": "npm:lodash@^3.10.1",
       "text": "github:systemjs/plugin-text@^0.0.2"
     },
     "devDependencies": {

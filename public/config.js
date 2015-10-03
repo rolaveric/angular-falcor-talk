@@ -1,5 +1,5 @@
 System.config({
-  baseURL: "/public/",
+  baseURL: "/",
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
@@ -11,6 +11,10 @@ System.config({
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
+  },
+
+  bundles: {
+    'vendorBundle': ['babel/polyfill', 'falcor', 'falcor-http-datasource', 'angular']
   },
 
   map: {
