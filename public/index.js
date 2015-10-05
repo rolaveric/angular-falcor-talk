@@ -1,8 +1,20 @@
 import 'babel/polyfill';
 import falcor from 'falcor';
 import HttpDataSource from 'falcor-http-datasource';
-import template from './app.html!text';
 import angular from 'angular';
+
+const template = `
+<div>
+  <h3>Todos: {{ctrl.todos.length}}</h3>
+  <ul>
+    <li ng-repeat="todoName in ctrl.todos">
+      <span>{{:: $index + 1}}: </span>
+      <input type="checkbox"/>
+      {{:: todoName}}
+    </li>
+  </ul>
+</div>
+`;
 
 class MyCtrl {
   constructor() {
