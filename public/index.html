@@ -6,11 +6,16 @@
 </head>
 <body>
   <h1>FalcorJS Talk</h1>
-  <div id="container"></div>
+
+  <falcor-example>Loading App...</falcor-example>
+
   <script src="jspm_packages/system.js"></script>
   <script src="config.js"></script>
   <script>
-    System.import('index.js');
+    System.import('index.js')
+        .then(function() {
+          angular.bootstrap(document, ['falcorExample'])
+        });
   </script>
 </body>
 </html>

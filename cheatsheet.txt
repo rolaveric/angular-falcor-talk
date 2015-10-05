@@ -1,5 +1,32 @@
-## Stage 2 - Insert Angular
+## Stage 1 - Angular without $evalAsync
+
+## Stage 2 - Add $evalAsync
+
+  constructor($scope) {
+    this.$scope = $scope;
+
+MyController.$inject = ['$scope'];
 
 ## Stage 3 - Request from view
 
+import falcor from './angularFalcor.js';
+
+  constructor($scope, falcor) {
+    this.$scope = $scope;
+    this.falcor = falcor;
+
+MyController.$inject = ['$scope', 'falcor'];
+
 ## Stage 4 - Getter/Setter
+
+  /**
+   * Creates a new todos item, setting it in the Falcor model and then retrieving the updated data.
+   */
+  addTodo() {
+    if (this.newName) {
+      // todos.add(name, done)
+      this.model.call(['todos', 'add'], [{name: this.newName, done: false}])
+        .subscribe(_ => this.$scope.$evalAsync());
+      this.newName = '';
+    }
+  }
