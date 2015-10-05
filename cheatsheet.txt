@@ -17,7 +17,22 @@ import falcor from './angularFalcor.js';
 
 MyController.$inject = ['$scope', 'falcor'];
 
+<div>
+  <h3>Todos: {{ctrl.todos.length}}</h3>
+  <ul>
+    <li ng-repeat="index in ctrl.model.getViewValue(['todos', 'length']) | pageRange">
+      <span>{{:: index + 1}}: </span>
+      <input type="checkbox"/>
+      {{:: ctrl.model.getViewValue(['todos', index, 'name'])}}
+    </li>
+  </ul>
+</div>
+
 ## Stage 4 - Getter/Setter
+
+<input type="checkbox" ng-model="ctrl.model.viewGetterSetter(['todos', index, 'done'])" ng-model-options="{ getterSetter: true }"/>
+
+## Stage 5 - Call
 
   /**
    * Creates a new todos item, setting it in the Falcor model and then retrieving the updated data.
@@ -30,3 +45,9 @@ MyController.$inject = ['$scope', 'falcor'];
       this.newName = '';
     }
   }
+
+<div>
+  <label>New Item:</label>
+  <input type="text" ng-model="ctrl.newName"/>
+  <button type="button" ng-click="ctrl.addTodo()">Add</button>
+</div>
